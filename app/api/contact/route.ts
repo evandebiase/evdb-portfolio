@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
     if (result.error) {
       console.error("Resend error:", result.error);
       return NextResponse.json(
-        { error: "Could not send right now. Please email hello@evdb.work directly." },
+        { error: "Could not send right now. Please email evandebiase@gmail.com directly." },
         { status: 502 }
       );
     }
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Contact route exception:", err);
     return NextResponse.json(
-      { error: "Could not send right now. Please email hello@evdb.work directly." },
+      { error: "Could not send right now. Please email evandebiase@gmail.com directly." },
       { status: 500 }
     );
   }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const social = [
-  { href: "mailto:hello@evdb.work", label: "Email" },
+  { href: "mailto:evandebiase@gmail.com", label: "Email" },
   { href: "https://twitter.com", label: "X / Twitter" },
   { href: "https://linkedin.com", label: "LinkedIn" },
   { href: "https://github.com", label: "GitHub" }

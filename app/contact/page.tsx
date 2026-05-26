@@ -51,7 +51,7 @@ export default function ContactPage() {
           kind: "error",
           message:
             data.error ??
-            "Something went wrong on our end. Email hello@evdb.work directly."
+            "Something went wrong on our end. Email evandebiase@gmail.com directly."
         });
         return;
       }
@@ -62,7 +62,7 @@ export default function ContactPage() {
       setStatus({
         kind: "error",
         message:
-          "Couldn't reach the server. Check your connection or email hello@evdb.work directly."
+          "Couldn't reach the server. Check your connection or email evandebiase@gmail.com directly."
       });
     }
   };
@@ -185,10 +185,10 @@ export default function ContactPage() {
             <ScrollReveal>
               <p className="text-eyebrow uppercase text-ink-muted">Direct</p>
               <a
-                href="mailto:hello@evdb.work"
+                href="mailto:evandebiase@gmail.com"
                 className="mt-4 block font-serif text-3xl text-ink underline decoration-ink/20 underline-offset-4 transition-colors hover:decoration-ink md:text-4xl"
               >
-                hello@evdb.work
+                evandebiase@gmail.com
               </a>
               <p className="mt-3 text-sm text-ink-muted">
                 Most inquiries get a reply within one business day.
