@@ -11,21 +11,60 @@ const intents = [
   "Something else"
 ];
 
+type Status =
+  | { kind: "idle" }
+  | { kind: "sending" }
+  | { kind: "sent" }
+  | { kind: "error"; message: string };
+
 export default function ContactPage() {
   const [intent, setIntent] = useState(intents[0]);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>({ kind: "idle" });
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (status.kind === "sending") return;
+
     const form = new FormData(e.currentTarget);
-    const name = form.get("name");
-    const email = form.get("email");
-    const message = form.get("message");
-    const body = `From: ${name} <${email}>%0A%0AIntent: ${intent}%0A%0A${message}`;
-    window.location.href = `mailto:hello@evdb.work?subject=${encodeURIComponent(
-      `[${intent}] Inquiry from ${name}`
-    )}&body=${body}`;
-    setSubmitted(true);
+    const payload = {
+      name: String(form.get("name") ?? ""),
+      email: String(form.get("email") ?? ""),
+      company: String(form.get("company") ?? ""),
+      message: String(form.get("message") ?? ""),
+      intent,
+      // Honeypot — bots fill every field. Hidden via CSS for humans.
+      website: String(form.get("website") ?? "")
+    };
+
+    setStatus({ kind: "sending" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        setStatus({
+          kind: "error",
+          message:
+            data.error ??
+            "Something went wrong on our end. Email hello@evdb.work directly."
+        });
+        return;
+      }
+
+      setStatus({ kind: "sent" });
+      (e.target as HTMLFormElement).reset();
+    } catch {
+      setStatus({
+        kind: "error",
+        message:
+          "Couldn't reach the server. Check your connection or email hello@evdb.work directly."
+      });
+    }
   };
 
   return (
@@ -96,18 +135,45 @@ export default function ContactPage() {
                   className="md:col-span-2"
                 />
 
+                {/* Honeypot — hidden from humans, irresistible to bots. */}
+                <div
+                  aria-hidden
+                  className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+                >
+                  <label>
+                    Website
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </label>
+                </div>
+
                 <div className="md:col-span-2">
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 text-sm text-cream transition-all hover:gap-5"
+                    disabled={status.kind === "sending" || status.kind === "sent"}
+                    className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 text-sm text-cream transition-all hover:gap-5 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Send inquiry
-                    <span aria-hidden>→</span>
+                    {status.kind === "sending"
+                      ? "Sending…"
+                      : status.kind === "sent"
+                      ? "Sent ✓"
+                      : "Send inquiry"}
+                    {status.kind !== "sent" && (
+                      <span aria-hidden>→</span>
+                    )}
                   </button>
-                  {submitted && (
-                    <p className="mt-4 text-sm text-ink-muted">
-                      Opening your email client…
+
+                  {status.kind === "sent" && (
+                    <p className="mt-4 text-sm text-ink-soft">
+                      Thanks — your note is on its way. I'll get back to you within one business day.
                     </p>
+                  )}
+                  {status.kind === "error" && (
+                    <p className="mt-4 text-sm text-clay">{status.message}</p>
                   )}
                 </div>
               </form>
