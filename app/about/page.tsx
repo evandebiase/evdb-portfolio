@@ -25,10 +25,11 @@ const principles = [
 ];
 
 const timeline = [
-  { year: "2026", line: "EVDB.work — independent practice. Shipping wtga.today, DeepCount.co, and others." },
-  { year: "2024", line: "Building tools for CRE and sports analytics in long-form contract engagements." },
-  { year: "2022", line: "Founding designer / engineer for a B2B fintech. Took it from sketch to enterprise contracts." },
-  { year: "2020", line: "Independent: shipping product for early-stage teams across health, finance, and media." }
+  { year: "2026", line: "EVDB.work — independent product, brand, and engineering practice. Shipping wtga.today, DeepCount.co, and others." },
+  { year: "2024", line: "Babson College — designing and shipping an AI-enhanced platform for student career development. End-to-end ownership: design, code, recruiting strategy." },
+  { year: "2021", line: "Therapeutic Mentor at the Justice Resource Institute. Trauma-informed work with high-risk youth, cross-functional with care teams and schools." },
+  { year: "2014", line: "Independent multimedia producer. National news for PBS and the Christian Science Monitor, interviews with C-suite and billionaires, commercials for Sotheby's. Learned what shipped craft actually looks like." },
+  { year: "2010", line: "Started Babson College undergrad. Ran campus media services for faculty and the president's office on the side." }
 ];
 
 export default function AboutPage() {
@@ -85,21 +86,34 @@ export default function AboutPage() {
             <p className="text-eyebrow uppercase text-ink-muted">Bio</p>
             <div className="mt-6 space-y-6 text-lg leading-relaxed text-ink-soft md:text-xl">
               <p>
-                I've spent the last decade quietly shipping product across
-                fintech, health, sports, and infrastructure — sometimes for
-                seed-stage founders, sometimes for category-defining companies.
+                My path into building product didn't start in tech. I came up
+                through multimedia — producing national news for PBS and the
+                Christian Science Monitor, interviewing C-suite executives and
+                athletes, cutting commercials for Sotheby's. After that I spent
+                three years as a Therapeutic Mentor with the Justice Resource
+                Institute, working alongside high-risk youth on resilience and
+                growth. Both stretches taught me the same thing: the best
+                systems are the ones designed around the actual humans who'll
+                use them.
               </p>
               <p>
-                Today I run EVDB.work as an independent studio. The model is simple:
-                small number of engagements, deep involvement, real ownership.
-                I take on work where I can have a meaningful seat at the table
-                and where the founder cares about the craft as much as the
-                metric.
+                For the last two years I've been at Babson College — my undergrad
+                alma mater, where I now advise students on careers. The real
+                work has been designing and shipping an AI-enhanced platform
+                from scratch: structured job search, application prep,
+                recruiting pipeline alignment. I own the design, the code, and
+                the strategy. It's the same instinct that runs through
+                everything I do — someone needs a system that works, and I'd
+                rather build it than wait for one to arrive.
               </p>
               <p>
-                When I'm not shipping, I'm probably reading a book about
-                typography, watching baseball, or sketching the next product
-                I'll regret starting.
+                EVDB.work is where I take everything that background gave me —
+                the production polish, the relationship work, the unreasonable
+                bar for craft — and apply it to the products and brands of
+                founders who feel the same way. The projects on this site are
+                real, mostly live, and built by hand. If you're stuck between a
+                sketch and something you can ship, that's the gap I'm best at
+                closing.
               </p>
             </div>
           </ScrollReveal>

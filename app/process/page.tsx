@@ -36,24 +36,6 @@ const phases = [
   }
 ];
 
-const engagementTypes = [
-  {
-    title: "Founding Engineer in Residence",
-    detail: "6–12 weeks. Embedded with the founding team to ship a complete v1 of a product surface.",
-    bestFor: "Pre-seed / seed teams shipping their first paid surface."
-  },
-  {
-    title: "Brand & Product Sprint",
-    detail: "4 weeks. Identity system, product surface, and marketing site delivered as one coherent artifact.",
-    bestFor: "Companies relaunching or repositioning."
-  },
-  {
-    title: "Fractional Lead",
-    detail: "Ongoing. 1–2 days/week of product, design, and engineering leadership.",
-    bestFor: "Teams between hires who can't afford to lose momentum."
-  }
-];
-
 export default function ProcessPage() {
   return (
     <>
@@ -120,36 +102,6 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* Engagement types */}
-      <section className="border-t border-ink/10 bg-cream-50 py-24 md:py-32">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-          <ScrollReveal>
-            <p className="text-eyebrow uppercase text-ink-muted">Engagement types</p>
-            <h2 className="mt-6 max-w-3xl font-serif text-display-md text-ink">
-              Three ways to <em className="font-light">work together.</em>
-            </h2>
-          </ScrollReveal>
-
-          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {engagementTypes.map((e, i) => (
-              <ScrollReveal key={e.title} delay={i * 0.08}>
-                <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-cream p-8 transition-shadow hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.3)]">
-                  <h3 className="font-serif text-2xl text-ink md:text-3xl">
-                    {e.title}
-                  </h3>
-                  <p className="mt-4 flex-1 text-base leading-relaxed text-ink-soft">
-                    {e.detail}
-                  </p>
-                  <div className="mt-8 border-t border-ink/10 pt-4">
-                    <p className="text-eyebrow uppercase text-ink-muted">Best for</p>
-                    <p className="mt-2 text-sm text-ink">{e.bestFor}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
