@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #F5F0E6;
+  color: #161513;
+  font-feature-settings: "ss01", "ss02", "cv11", "calt";
+}
+
+::selection {
+  background: #161513;
+  color: #F5F0E6;
+}
+
+/* Editorial pull-quote utility */
+.pull-quote::before {
+  content: "“";
+  font-family: var(--font-fraunces);
+  font-size: 4em;
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 0.05em;
+  opacity: 0.4;
+}
+
+/* Tabular figures for stats */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom cursor — hide default on fine pointers */
+@media (pointer: fine) {
+  html, body {
+    cursor: none;
+  }
+  a, button, [role="button"], input, textarea, select, [data-cursor="hover"] {
+    cursor: none;
+  }
+}
