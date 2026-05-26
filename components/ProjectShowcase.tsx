@@ -112,7 +112,7 @@ function ShowcasePane({ project }: { project: Project }) {
   return (
     <div
       className={cn(
-        "group relative aspect-[16/9] overflow-hidden rounded-2xl border border-ink/10 bg-cream-50 shadow-[0_40px_100px_-40px_rgba(0,0,0,0.4)]"
+        "group relative aspect-[3/4] overflow-hidden rounded-xl border border-ink/10 bg-cream-50 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)] sm:aspect-[4/3] md:aspect-[16/10] md:rounded-2xl md:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.4)] lg:aspect-[16/9]"
       )}
     >
       {/* Browser chrome */}
@@ -175,14 +175,11 @@ function LivePreview({ project }: { project: Project }) {
           referrerPolicy="no-referrer"
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
-          // Render at 1.333× the pane size, then scale to 75% — a desktop view inside the chrome
-          // that stays interactive and crisp.
-          className="absolute left-0 top-0 origin-top-left"
-          style={{
-            width: "133.33%",
-            height: "133.33%",
-            transform: "scale(0.75)"
-          }}
+          // Mobile: render the iframe at its native pane size — the embedded site shows
+          // its own mobile responsive design.
+          // Desktop (md+): render at 1.333× the pane size, then scale to 75% — a desktop
+          // view inside the chrome that stays interactive and crisp.
+          className="absolute left-0 top-0 h-full w-full origin-top-left md:h-[133.33%] md:w-[133.33%] md:[transform:scale(0.75)]"
         />
       )}
     </div>
