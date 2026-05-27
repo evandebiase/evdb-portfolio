@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const stats = [
   { value: "01", label: "Studio of one" },
-  { value: "04+", label: "Live products" },
+  { value: "05+", label: "Live products" },
   { value: "100%", label: "Independent" },
   { value: "2026", label: "Currently shipping" }
 ];

@@ -68,6 +68,20 @@ export const projects: Project[] = [
     role: "Product, Design, Engineering",
     stack: ["Next.js", "Postgres", "Stripe", "Mapbox"],
     accent: "#1F3A5F"
+  },
+  {
+    slug: "credata",
+    index: "05",
+    title: "CREdata.co",
+    tagline: "The data layer for commercial real estate.",
+    description:
+      "A CRE intelligence platform that pulls scattered market signals — lease comps, ownership changes, tenant movements — into one workspace where the next deal becomes obvious before anyone else sees it.",
+    year: "2026",
+    role: "Product, Engineering, Data",
+    stack: ["Next.js", "TypeScript", "Postgres", "Mapbox"],
+    liveUrl: "https://credata.co",
+    externalUrl: "https://credata.co",
+    accent: "#4A5C6A"
   }
 ];
 
