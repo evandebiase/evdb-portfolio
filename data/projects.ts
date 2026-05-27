@@ -61,7 +61,7 @@ export const projects: Project[] = [
     slug: "truck-logistics-marketplace",
     index: "04",
     title: "Truck Logistics Marketplace",
-    tagline: "StubHub for vetted heavy-vehicle transport.",
+    tagline: "Automated bidding site for vetted heavy-vehicle transport.",
     description:
       "A two-sided marketplace pairing shippers with vetted carriers for heavy commercial equipment. Built for trust, transparent pricing, and the kind of operational rigor freight has historically lacked.",
     year: "2026",
