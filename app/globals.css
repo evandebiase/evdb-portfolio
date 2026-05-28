@@ -48,13 +48,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-/* Custom cursor — hide default on fine pointers */
-@media (pointer: fine) {
-  html, body {
-    cursor: none;
-  }
-  a, button, [role="button"], input, textarea, select, [data-cursor="hover"] {
-    cursor: none;
-  }
-}

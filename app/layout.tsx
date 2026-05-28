@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Cursor } from "@/components/Cursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -48,7 +47,6 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} ${jetbrains.variable}`}
     >
       <body className="bg-cream font-sans text-ink antialiased">
-        <Cursor />
         <Header />
         <main>{children}</main>
         <Footer />
