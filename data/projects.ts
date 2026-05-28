@@ -43,12 +43,12 @@ export const projects: Project[] = [
     accent: "#B4513E"
   },
   {
-    slug: "nexthealth-ambassador",
+    slug: "nashville-biohacking",
     index: "03",
-    title: "NextHealth Ambassador",
-    tagline: "Brand-aligned ambassador hub for a category-defining health platform.",
+    title: "Nashville Bio-hacking",
+    tagline: "Brand and booking for a longevity & performance studio.",
     description:
-      "An invitation-only program site for NextHealth's clinical ambassadors — built around an editorial visual system, frictionless onboarding, and embedded content tools.",
+      "A brand and membership platform for a Nashville longevity and bio-hacking studio — recovery protocols, performance tracking, and class booking wrapped in an editorial identity with frictionless onboarding.",
     year: "2026",
     role: "Design, Engineering",
     stack: ["Next.js", "Sanity", "Tailwind"],
