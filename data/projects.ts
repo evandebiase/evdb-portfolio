@@ -17,8 +17,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "wtga",
+    slug: "haulhub",
     index: "01",
+    title: "HaulHub.co",
+    tagline: "Automated bidding site for vetted heavy-vehicle transport.",
+    description:
+      "A two-sided marketplace pairing shippers with vetted carriers for heavy commercial equipment. Built for trust, transparent pricing, and the kind of operational rigor freight has historically lacked.",
+    year: "2026",
+    role: "Product, Design, Engineering",
+    stack: ["Next.js", "Postgres", "Stripe", "Mapbox"],
+    accent: "#1F3A5F"
+  },
+  {
+    slug: "wtga",
+    index: "02",
     title: "WTGA.today",
     tagline: "A live game-discovery layer for the open web.",
     description:
@@ -32,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nexthealth-ambassador",
-    index: "02",
+    index: "03",
     title: "NextHealth Ambassador",
     tagline: "Brand-aligned ambassador hub for a category-defining health platform.",
     description:
@@ -45,7 +57,7 @@ export const projects: Project[] = [
   },
   {
     slug: "deepcount",
-    index: "03",
+    index: "04",
     title: "DeepCount.co",
     tagline: "Baseball analytics tools — the cuts coaches actually use.",
     description:
@@ -56,18 +68,6 @@ export const projects: Project[] = [
     liveUrl: "https://deepcount.co",
     externalUrl: "https://deepcount.co",
     accent: "#2D5F4F"
-  },
-  {
-    slug: "truck-logistics-marketplace",
-    index: "04",
-    title: "Truck Logistics Marketplace",
-    tagline: "Automated bidding site for vetted heavy-vehicle transport.",
-    description:
-      "A two-sided marketplace pairing shippers with vetted carriers for heavy commercial equipment. Built for trust, transparent pricing, and the kind of operational rigor freight has historically lacked.",
-    year: "2026",
-    role: "Product, Design, Engineering",
-    stack: ["Next.js", "Postgres", "Stripe", "Mapbox"],
-    accent: "#1F3A5F"
   },
   {
     slug: "credata",
