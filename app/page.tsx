@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 const stats = [
-  { value: "01", label: "Studio of one" },
+  { value: "01", label: "Point of contact" },
   { value: "05+", label: "Live products" },
   { value: "100%", label: "Independent" },
   { value: "2026", label: "Currently shipping" }

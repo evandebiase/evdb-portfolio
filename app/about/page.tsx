@@ -42,9 +42,9 @@ export default function AboutPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.05}>
             <h1 className="mt-6 font-serif text-display-xl text-ink">
-              A studio of <em className="font-light">one,</em>
+              Independent
               <br />
-              by design.
+              by <em className="font-light">design.</em>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

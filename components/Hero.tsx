@@ -74,9 +74,9 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-xl text-lg leading-relaxed text-ink-soft md:col-span-7 md:text-xl"
           >
-            EVDB.work is the independent practice of Evan DeBiase — a studio of
-            one shipping product, brand, and infrastructure for founders who
-            refuse to settle for the default.
+            EVDB.work is the independent practice of Evan DeBiase — shipping
+            product, brand, and infrastructure for founders who refuse to
+            settle for the default.
           </motion.p>
 
           <motion.div
