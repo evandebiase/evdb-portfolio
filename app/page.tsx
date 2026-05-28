@@ -9,12 +9,7 @@ export default function HomePage() {
       <section className="bg-cream pb-6 pt-28 md:pb-8 md:pt-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
-            <p className="text-eyebrow uppercase text-ink-muted">
-              EVDB.work — Selected work, 2026
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.05}>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
+            <p className="max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
               The independent practice of Evan DeBiase — product, brand, and
               engineering for founders who refuse to settle for the default. A
               few of the things I've built:
