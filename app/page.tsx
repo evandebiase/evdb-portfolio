@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       {/* Compact landing intro — projects start right below */}
-      <section className="bg-cream pb-6 pt-36 md:pb-10 md:pt-44">
+      <section className="bg-cream pb-6 pt-28 md:pb-8 md:pt-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
             <p className="text-eyebrow uppercase text-ink-muted">
@@ -14,14 +14,7 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.05}>
-            <h1 className="mt-6 font-serif text-display-xl text-ink">
-              Designed with <em className="font-light">rigor.</em>
-              <br />
-              Built to <em className="font-light">last.</em>
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
               The independent practice of Evan DeBiase — product, brand, and
               engineering for founders who refuse to settle for the default. A
               few of the things I've built:
