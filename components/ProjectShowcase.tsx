@@ -82,9 +82,9 @@ export function ProjectShowcase({ project }: Props) {
           </div>
 
           <div className="flex items-start md:col-span-3 md:justify-end">
-            {project.externalUrl ? (
+            {project.liveUrl ? (
               <a
-                href={project.externalUrl}
+                href={project.externalUrl ?? project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm text-cream transition-all hover:gap-5"
@@ -95,7 +95,7 @@ export function ProjectShowcase({ project }: Props) {
             ) : (
               <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3 text-xs uppercase tracking-widest text-ink-muted">
                 <span className="h-1.5 w-1.5 rounded-full bg-ink-muted/50" />
-                In stealth
+                Coming soon
               </span>
             )}
           </div>

@@ -26,6 +26,8 @@ export const projects: Project[] = [
     year: "2026",
     role: "Product, Design, Engineering",
     stack: ["Next.js", "Postgres", "Stripe", "Mapbox"],
+    // Domain connected; site not live yet. Add liveUrl to embed once it ships.
+    externalUrl: "https://haulhub.co",
     accent: "#1F3A5F"
   },
   {
@@ -52,7 +54,8 @@ export const projects: Project[] = [
     year: "2026",
     role: "Design, Engineering",
     stack: ["Next.js", "Sanity", "Tailwind"],
-    // liveUrl intentionally left out — drop it in later.
+    // Domain connected; site not live yet. Add liveUrl to embed once it ships.
+    externalUrl: "https://nashvillebiohacking.com",
     accent: "#7B6E5A"
   },
   {
