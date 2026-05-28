@@ -9,23 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Tokens resolve from CSS variables defined in globals.css.
+        // Light mode = cream/ink; dark mode (prefers-color-scheme) = navy.
+        // RGB-channel form keeps Tailwind opacity modifiers (e.g. bg-ink/80) working.
         cream: {
-          DEFAULT: "#F5F0E6",
-          50: "#FAF6EC",
-          100: "#F5F0E6",
-          200: "#EDE6D5",
-          300: "#E0D5BC"
+          DEFAULT: "rgb(var(--c-cream) / <alpha-value>)",
+          50: "rgb(var(--c-cream-50) / <alpha-value>)",
+          100: "rgb(var(--c-cream-100) / <alpha-value>)",
+          200: "rgb(var(--c-cream-200) / <alpha-value>)",
+          300: "rgb(var(--c-cream-300) / <alpha-value>)"
         },
         ink: {
-          DEFAULT: "#161513",
-          soft: "#2D2620",
-          muted: "#8B8175",
-          line: "#1A1A1A"
+          DEFAULT: "rgb(var(--c-ink) / <alpha-value>)",
+          soft: "rgb(var(--c-ink-soft) / <alpha-value>)",
+          muted: "rgb(var(--c-ink-muted) / <alpha-value>)",
+          line: "rgb(var(--c-ink-line) / <alpha-value>)"
         },
         clay: {
-          DEFAULT: "#B4513E",
-          dark: "#8A3C2C",
-          light: "#D17961"
+          DEFAULT: "rgb(var(--c-clay) / <alpha-value>)",
+          dark: "rgb(var(--c-clay-dark) / <alpha-value>)",
+          light: "rgb(var(--c-clay-light) / <alpha-value>)"
         }
       },
       fontFamily: {

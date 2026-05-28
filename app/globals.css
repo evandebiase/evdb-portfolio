@@ -2,8 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme (default) — cream + ink. Values are space-separated RGB
+   channels so Tailwind opacity modifiers keep working. */
 :root {
   color-scheme: light;
+  --c-cream: 245 240 230;
+  --c-cream-50: 250 246 236;
+  --c-cream-100: 245 240 230;
+  --c-cream-200: 237 230 213;
+  --c-cream-300: 224 213 188;
+  --c-ink: 22 21 19;
+  --c-ink-soft: 45 38 32;
+  --c-ink-muted: 139 129 117;
+  --c-ink-line: 26 26 26;
+  --c-clay: 180 81 62;
+  --c-clay-dark: 138 60 44;
+  --c-clay-light: 209 121 97;
+}
+
+/* Night mode — auto-switches with the OS. Deep navy surfaces, soft
+   off-white type, slightly warmed terracotta accent. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --c-cream: 14 26 48;
+    --c-cream-50: 19 33 59;
+    --c-cream-100: 14 26 48;
+    --c-cream-200: 29 45 74;
+    --c-cream-300: 40 57 90;
+    --c-ink: 234 238 246;
+    --c-ink-soft: 194 203 220;
+    --c-ink-muted: 129 143 168;
+    --c-ink-line: 234 238 246;
+    --c-clay: 202 107 84;
+    --c-clay-dark: 168 80 60;
+    --c-clay-light: 216 130 106;
+  }
 }
 
 html {
@@ -14,14 +48,14 @@ html {
 }
 
 body {
-  background: #F5F0E6;
-  color: #161513;
+  background: rgb(var(--c-cream));
+  color: rgb(var(--c-ink));
   font-feature-settings: "ss01", "ss02", "cv11", "calt";
 }
 
 ::selection {
-  background: #161513;
-  color: #F5F0E6;
+  background: rgb(var(--c-ink));
+  color: rgb(var(--c-cream));
 }
 
 /* Editorial pull-quote utility */

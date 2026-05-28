@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -34,6 +34,13 @@ export const metadata: Metadata = {
       "Independent studio of Evan DeBiase. Product, brand, and engineering.",
     type: "website"
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F5F0E6" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E1A30" }
+  ]
 };
 
 export default function RootLayout({
