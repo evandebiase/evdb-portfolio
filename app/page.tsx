@@ -10,9 +10,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
             <p className="max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
-              The independent practice of Evan DeBiase — product, brand, and
-              engineering for founders who refuse to settle for the default. A
-              few of the things I've built:
+              Product, brand, and engineering for founders who refuse to settle
+              for the default. A few of the things I've built:
             </p>
           </ScrollReveal>
         </div>
