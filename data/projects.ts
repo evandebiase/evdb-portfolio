@@ -26,7 +26,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Product, Design, Engineering",
     stack: ["Next.js", "Postgres", "Stripe", "Mapbox"],
-    // Domain connected; site not live yet. Add liveUrl to embed once it ships.
+    liveUrl: "https://haulhub.co",
     externalUrl: "https://haulhub.co",
     accent: "#1F3A5F"
   },
