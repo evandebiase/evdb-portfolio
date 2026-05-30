@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: "WTGA.today",
     tagline: "A live game-discovery layer for the open web.",
     description:
-      "Where The Game At — a fast, opinionated finder for live sports streams. Built for the moment between sitting down on the couch and realizing the game you wanted to watch is on a network you forgot you have.",
+      "Where The Game At — a fast finder for live sports streams. Built for the moment between sitting down on the couch and realizing the game you wanted to watch is on a network you forgot you have.",
     year: "2026",
     role: "Design, Engineering, Product",
     stack: ["Next.js", "TypeScript", "Tailwind", "Edge"],
