@@ -54,7 +54,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "Design, Engineering",
     stack: ["Next.js", "Sanity", "Tailwind"],
-    // Domain connected; site not live yet. Add liveUrl to embed once it ships.
+    liveUrl: "https://nashvillebiohacking.com",
     externalUrl: "https://nashvillebiohacking.com",
     accent: "#7B6E5A"
   },
