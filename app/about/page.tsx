@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
@@ -63,22 +64,15 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 md:grid-cols-12 md:px-12">
           <ScrollReveal className="md:col-span-5">
             <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-ink/10 bg-cream-50">
-              <div
-                className="relative h-full w-full"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 30% 20%, #B4513E22 0%, transparent 50%), radial-gradient(circle at 70% 80%, #2D5F4F18 0%, transparent 50%)"
-                }}
-              >
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <p className="font-serif text-7xl text-ink">EV<em>DB</em><span className="text-ink-muted">.work</span></p>
-                    <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-ink-muted">
-                      Portrait placeholder — drop a photo into /public/images/portrait.jpg
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/images/portrait.jpg"
+                alt="Evan DeBiase"
+                width={800}
+                height={800}
+                priority
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="h-full w-full object-cover"
+              />
             </div>
           </ScrollReveal>
 
