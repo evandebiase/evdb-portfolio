@@ -2,9 +2,7 @@ import Link from "next/link";
 
 const social = [
   { href: "mailto:evandebiase@gmail.com", label: "Email" },
-  { href: "https://twitter.com", label: "X / Twitter" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
-  { href: "https://github.com", label: "GitHub" }
+  { href: "https://www.linkedin.com/in/evandebiase/", label: "LinkedIn" }
 ];
 
 export function Footer() {
