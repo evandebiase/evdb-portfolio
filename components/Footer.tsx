@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const social = [
-  { href: "mailto:evandebiase@gmail.com", label: "Email" },
+  { href: "https://mail.google.com/mail/?view=cm&fs=1&to=evandebiase@gmail.com", label: "Email" },
   { href: "https://www.linkedin.com/in/evandebiase/", label: "LinkedIn" }
 ];
 
