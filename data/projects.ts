@@ -34,7 +34,7 @@ export const projects: Project[] = [
     slug: "wtga",
     index: "02",
     title: "WTGA.live",
-    tagline: "Find every game. Trim every wasted subscription.",
+    tagline: "Find every game. Optimize streaming subscriptions.",
     description:
       "Where The Game At — a fast finder for live sports streams that doubles as a streaming-service optimizer. Built for the moment between sitting down on the couch and realizing the game you wanted is on a network you forgot you have, and for trimming the subscriptions you never actually use.",
     year: "2026",
