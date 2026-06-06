@@ -26,7 +26,7 @@ const principles = [
 ];
 
 const timeline = [
-  { year: "2026", line: "EVDB.work — independent product, brand, and engineering practice. Shipping wtga.today, DeepCount.co, and others." },
+  { year: "2026", line: "EVDB.work — independent product, brand, and engineering practice. Shipping wtga.live, DeepCount.co, and others." },
   { year: "2024", line: "Babson College — designing and shipping an AI-enhanced platform for student career development. End-to-end ownership: design, code, recruiting strategy." },
   { year: "2021", line: "Therapeutic Mentor at the Justice Resource Institute. Trauma-informed work with high-risk youth, cross-functional with care teams and schools." },
   { year: "2014", line: "Independent multimedia producer. National news for PBS and the Christian Science Monitor, interviews with C-suite and billionaires, commercials for Sotheby's. Learned what shipped craft actually looks like." },
