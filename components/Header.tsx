@@ -35,7 +35,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12 md:py-6">
         <Link href="/" className="group flex items-baseline gap-2">
           <span className="font-serif text-2xl tracking-tight text-ink">
-            EV<span className="italic">DB</span>
+            ev<span className="italic">db</span>
             <span className="text-ink-muted">.work</span>
           </span>
           <span className="hidden text-eyebrow uppercase text-ink-muted md:inline">

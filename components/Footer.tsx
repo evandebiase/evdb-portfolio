@@ -62,7 +62,7 @@ export function Footer() {
 
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-ink/10 pt-8 text-xs text-ink-muted md:flex-row md:items-center">
           <p>
-            <span className="font-serif text-base text-ink">EV<em>DB</em><span className="text-ink-muted">.work</span></span>
+            <span className="font-serif text-base text-ink">ev<em>db</em><span className="text-ink-muted">.work</span></span>
             <span className="ml-3">© {new Date().getFullYear()} — All rights reserved</span>
           </p>
           <p className="font-mono uppercase tracking-widest">
