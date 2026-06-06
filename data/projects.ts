@@ -40,8 +40,8 @@ export const projects: Project[] = [
     year: "2026",
     role: "Design, Engineering, Product",
     stack: ["Next.js", "TypeScript", "Tailwind", "Edge"],
-    liveUrl: "https://wtga.today",
-    externalUrl: "https://wtga.today",
+    liveUrl: "https://wtga.live",
+    externalUrl: "https://wtga.live",
     accent: "#B4513E"
   },
   {
