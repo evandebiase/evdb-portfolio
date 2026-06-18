@@ -57,20 +57,6 @@ export const projects: Project[] = [
     liveUrl: "https://deepcount.co",
     externalUrl: "https://deepcount.co",
     accent: "#2D5F4F"
-  },
-  {
-    slug: "credata",
-    index: "04",
-    title: "CREdata.co",
-    tagline: "The data layer for commercial real estate.",
-    description:
-      "A CRE intelligence platform that pulls scattered market signals — lease comps, ownership changes, tenant movements — into one workspace where the next deal becomes obvious before anyone else sees it.",
-    year: "2026",
-    role: "Product, Engineering, Data",
-    stack: ["Next.js", "TypeScript", "Postgres", "Mapbox"],
-    liveUrl: "https://credata.co",
-    externalUrl: "https://credata.co",
-    accent: "#4A5C6A"
   }
 ];
 
