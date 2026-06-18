@@ -31,22 +31,8 @@ export const projects: Project[] = [
     accent: "#1F3A5F"
   },
   {
-    slug: "wtga",
-    index: "02",
-    title: "WTGA.live",
-    tagline: "Find every game. Optimize streaming subscriptions.",
-    description:
-      "Where The Game At — a fast finder for live sports streams that doubles as a streaming-service optimizer. Built for the moment between sitting down on the couch and realizing the game you wanted is on a network you forgot you have, and for trimming the subscriptions you never actually use.",
-    year: "2026",
-    role: "Design, Engineering, Product",
-    stack: ["Next.js", "TypeScript", "Tailwind", "Edge"],
-    liveUrl: "https://wtga.live",
-    externalUrl: "https://wtga.live",
-    accent: "#B4513E"
-  },
-  {
     slug: "nashville-biohacking",
-    index: "03",
+    index: "02",
     title: "Nashville Bio-hacking",
     tagline: "Brand and booking for a longevity & performance studio.",
     description:
@@ -60,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "deepcount",
-    index: "04",
+    index: "03",
     title: "DeepCount.co",
     tagline: "Baseball analytics tools — the cuts coaches actually use.",
     description:
@@ -74,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     slug: "credata",
-    index: "05",
+    index: "04",
     title: "CREdata.co",
     tagline: "The data layer for commercial real estate.",
     description:
