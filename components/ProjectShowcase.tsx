@@ -172,7 +172,10 @@ function LivePreview({ project }: { project: Project }) {
           loading="lazy"
           // Sandbox keeps user safe; allow-same-origin lets most sites actually render.
           sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-          referrerPolicy="no-referrer"
+          // Default referrer policy — sending the normal Referer is required by
+          // Next.js Image optimization (/_next/image) on the embedded sites,
+          // otherwise it 403s their hero photos as "unauthorized hotlinks."
+          referrerPolicy="strict-origin-when-cross-origin"
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
           // Mobile: render the iframe at its native pane size — the embedded site shows
