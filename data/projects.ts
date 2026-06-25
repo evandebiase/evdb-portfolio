@@ -57,6 +57,20 @@ export const projects: Project[] = [
     liveUrl: "https://deepcount.co",
     externalUrl: "https://deepcount.co",
     accent: "#2D5F4F"
+  },
+  {
+    slug: "caseforge",
+    index: "04",
+    title: "CaseForge",
+    tagline: "An AI sparring partner for case interviews.",
+    description:
+      "AI case-interview practice tuned to the formats of eight consulting firms — MBB, Deloitte, Accenture, EY-Parthenon, Oliver Wyman, Strategy&. An on-demand Coach surfaces a hint, a clarifying question, or a model answer the moment you stall.",
+    year: "2026",
+    role: "Product, Engineering, AI",
+    stack: ["Next.js", "TypeScript", "Claude API", "Tailwind"],
+    liveUrl: "https://caseforge-pied.vercel.app",
+    externalUrl: "https://caseforge-pied.vercel.app",
+    accent: "#6E3B3F"
   }
 ];
 
