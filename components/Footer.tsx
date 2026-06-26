@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const social = [
   { href: "https://mail.google.com/mail/?view=cm&fs=1&to=evandebiase@gmail.com", label: "Email" },
-  { href: "https://www.linkedin.com/in/evandebiase/", label: "LinkedIn" }
+  { href: "https://www.linkedin.com/in/evandebiase/", label: "LinkedIn" },
+  { href: "https://github.com/evandebiase", label: "GitHub" }
 ];
 
 export function Footer() {
