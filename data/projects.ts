@@ -71,6 +71,20 @@ export const projects: Project[] = [
     liveUrl: "https://caseforge-pied.vercel.app",
     externalUrl: "https://caseforge-pied.vercel.app",
     accent: "#6E3B3F"
+  },
+  {
+    slug: "fieldpath",
+    index: "05",
+    title: "FieldPath",
+    tagline: "An operating system for medical device sales reps.",
+    description:
+      "A purpose-built sales OS for medical device reps in the field — schedule, tasks, pipeline by stage, case volume, top procedures, and spend per HCP in one workspace. Logs activity automatically so reps stay selling instead of typing.",
+    year: "2026",
+    role: "Product, Engineering, Design",
+    stack: ["Next.js", "TypeScript", "Tailwind"],
+    liveUrl: "https://fieldpath-crm.vercel.app",
+    externalUrl: "https://fieldpath-crm.vercel.app",
+    accent: "#977125"
   }
 ];
 
