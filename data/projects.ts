@@ -73,17 +73,17 @@ export const projects: Project[] = [
     accent: "#2D5F4F"
   },
   {
-    slug: "caseforge",
+    slug: "casequestions",
     index: "05",
-    title: "CaseForge",
-    tagline: "An AI sparring partner for case interviews.",
+    title: "CaseQuestions.ai",
+    tagline: "An AI sparring partner for case and fit interviews.",
     description:
-      "AI case-interview practice tuned to the formats of eight consulting firms — MBB, Deloitte, Accenture, EY-Parthenon, Oliver Wyman, Strategy&. An on-demand Coach surfaces a hint, a clarifying question, or a model answer the moment you stall.",
+      "AI-driven case and fit interview practice tuned to eight consulting firms: MBB, Deloitte, Accenture, EY-Parthenon, Oliver Wyman, and Strategy&. Voice-first drills with on-demand coaching that surfaces a hint, a clarifying question, or a model answer the moment you stall.",
     year: "2026",
     role: "Product, Engineering, AI",
-    stack: ["Next.js", "TypeScript", "Claude API", "Tailwind"],
-    liveUrl: "https://caseforge-pied.vercel.app",
-    externalUrl: "https://caseforge-pied.vercel.app",
+    stack: ["Next.js", "Claude API", "Neon", "Stripe"],
+    liveUrl: "https://casequestions.ai",
+    externalUrl: "https://casequestions.ai",
     accent: "#6E3B3F"
   },
   {
