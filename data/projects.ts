@@ -17,8 +17,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "haulhub",
+    slug: "ops-pulse",
     index: "01",
+    title: "Ops Pulse",
+    tagline: "Real-time restaurant operations built on Snowflake.",
+    description:
+      "A live operations layer for restaurants. Snowpipe Streaming pipes order and inventory events into Dynamic Tables, serverless alerts flag anomalies as they happen, and a Cortex Analyst assistant answers plain-English questions against the warehouse with row-level governance.",
+    year: "2026",
+    role: "Product, Data Engineering, AI",
+    stack: ["Next.js", "Snowflake", "Snowpipe", "Cortex Analyst"],
+    liveUrl: "https://claude1-topaz.vercel.app",
+    externalUrl: "https://claude1-topaz.vercel.app",
+    accent: "#3E6B85"
+  },
+  {
+    slug: "haulhub",
+    index: "02",
     title: "HaulHub.co",
     tagline: "Automated bidding site for vetted heavy-vehicle transport.",
     description:
@@ -32,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "wtga",
-    index: "02",
+    index: "03",
     title: "WTGA.live",
     tagline: "Find every game. Optimize streaming subscriptions.",
     description:
@@ -46,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nashville-biohacking",
-    index: "03",
+    index: "04",
     title: "Nashville Bio-hacking",
     tagline: "Brand and booking for a longevity & performance studio.",
     description:
@@ -60,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     slug: "deepcount",
-    index: "04",
+    index: "05",
     title: "DeepCount.co",
     tagline: "Baseball analytics tools — the cuts coaches actually use.",
     description:
@@ -74,7 +88,7 @@ export const projects: Project[] = [
   },
   {
     slug: "casequestions",
-    index: "05",
+    index: "06",
     title: "CaseQuestions.ai",
     tagline: "An AI sparring partner for case and fit interviews.",
     description:
@@ -88,7 +102,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fieldpath",
-    index: "06",
+    index: "07",
     title: "FieldPath",
     tagline: "An operating system for medical device sales reps.",
     description:
