@@ -17,8 +17,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "haulhub",
+    slug: "ops-pulse",
     index: "01",
+    title: "Ops Pulse",
+    tagline: "Real-time restaurant operations on Snowflake.",
+    description:
+      "A working prototype for a two-brand, 2,800-restaurant burger chain. Every order and drive-thru car streams into Snowflake and becomes live dashboards, automatic alerts, and plain-English answers for executives and franchisees, with each franchisee seeing only their own stores. Take the 60 second tour inside the preview.",
+    year: "2026",
+    role: "Data Engineering, Product, Design",
+    stack: ["Snowflake", "Snowpipe Streaming", "Dynamic Tables", "Cortex AI", "Terraform", "Next.js"],
+    liveUrl: "https://claude1-topaz.vercel.app/?embed=1&theme=light",
+    externalUrl: "https://claude1-topaz.vercel.app/",
+    accent: "#2A6FB0"
+  },
+  {
+    slug: "haulhub",
+    index: "02",
     title: "HaulHub.co",
     tagline: "Automated bidding site for vetted heavy-vehicle transport.",
     description:
@@ -32,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "wtga",
-    index: "02",
+    index: "03",
     title: "WTGA.live",
     tagline: "Find every game. Optimize streaming subscriptions.",
     description:
@@ -46,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nashville-biohacking",
-    index: "03",
+    index: "04",
     title: "Nashville Bio-hacking",
     tagline: "Brand and booking for a longevity & performance studio.",
     description:
@@ -60,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     slug: "deepcount",
-    index: "04",
+    index: "05",
     title: "DeepCount.co",
     tagline: "Baseball analytics tools — the cuts coaches actually use.",
     description:
@@ -74,7 +88,7 @@ export const projects: Project[] = [
   },
   {
     slug: "casequestions",
-    index: "05",
+    index: "06",
     title: "CaseQuestions.ai",
     tagline: "An AI sparring partner for case and fit interviews.",
     description:
@@ -88,7 +102,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fieldpath",
-    index: "06",
+    index: "07",
     title: "FieldPath",
     tagline: "An operating system for medical device sales reps.",
     description:
