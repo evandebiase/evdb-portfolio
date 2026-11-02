@@ -17,18 +17,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "ops-pulse",
+    slug: "casequestions",
     index: "01",
-    title: "Ops Pulse",
-    tagline: "Real-time restaurant operations built on Snowflake.",
+    title: "CaseQuestions.ai",
+    tagline: "An AI sparring partner for case and fit interviews.",
     description:
-      "A live operations layer for restaurants. Snowpipe Streaming pipes order and inventory events into Dynamic Tables, serverless alerts flag anomalies as they happen, and a Cortex Analyst assistant answers plain-English questions against the warehouse with row-level governance.",
+      "AI-driven case and fit interview practice tuned to eight consulting firms: MBB, Deloitte, Accenture, EY-Parthenon, Oliver Wyman, and Strategy&. Voice-first drills with on-demand coaching that surfaces a hint, a clarifying question, or a model answer the moment you stall.",
     year: "2026",
-    role: "Product, Data Engineering, AI",
-    stack: ["Next.js", "Snowflake", "Snowpipe", "Cortex Analyst"],
-    liveUrl: "https://claude1-topaz.vercel.app",
-    externalUrl: "https://claude1-topaz.vercel.app",
-    accent: "#3E6B85"
+    role: "Product, Engineering, AI",
+    stack: ["Next.js", "Claude API", "Neon", "Stripe"],
+    liveUrl: "https://casequestions.ai",
+    externalUrl: "https://casequestions.ai",
+    accent: "#6E3B3F"
   },
   {
     slug: "haulhub",
@@ -87,22 +87,8 @@ export const projects: Project[] = [
     accent: "#2D5F4F"
   },
   {
-    slug: "casequestions",
-    index: "06",
-    title: "CaseQuestions.ai",
-    tagline: "An AI sparring partner for case and fit interviews.",
-    description:
-      "AI-driven case and fit interview practice tuned to eight consulting firms: MBB, Deloitte, Accenture, EY-Parthenon, Oliver Wyman, and Strategy&. Voice-first drills with on-demand coaching that surfaces a hint, a clarifying question, or a model answer the moment you stall.",
-    year: "2026",
-    role: "Product, Engineering, AI",
-    stack: ["Next.js", "Claude API", "Neon", "Stripe"],
-    liveUrl: "https://casequestions.ai",
-    externalUrl: "https://casequestions.ai",
-    accent: "#6E3B3F"
-  },
-  {
     slug: "fieldpath",
-    index: "07",
+    index: "06",
     title: "FieldPath",
     tagline: "An operating system for medical device sales reps.",
     description:
