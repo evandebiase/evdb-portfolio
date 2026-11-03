@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <>
       {/* Landing intro: identity block on the left, positioning line on the right */}
-      <section className="bg-cream pb-10 pt-28 md:pb-12 md:pt-32">
+      <section className="bg-cream pb-6 pt-20 md:pb-8 md:pt-24">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
@@ -116,7 +116,7 @@ export default function HomePage() {
       {/* Tech-stack marquee */}
       <section
         aria-hidden
-        className="overflow-hidden border-y border-ink/10 bg-cream py-4"
+        className="overflow-hidden border-y border-ink/10 bg-cream py-3"
       >
         <div className="flex min-w-max animate-marquee items-center gap-10 whitespace-nowrap">
           {[...techStack, ...techStack, ...techStack, ...techStack].map(
@@ -132,16 +132,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Selected work section header */}
-      <section className="bg-cream pb-6 pt-16 md:pb-8 md:pt-24">
+      {/* Selected Work header + project index — compact TOC that doubles as
+          proof-of-substance above the fold. Each chip jumps to its project. */}
+      <section className="bg-cream pb-4 pt-10 md:pb-6 md:pt-14">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
-            <div className="flex items-center gap-6">
-              <div className="h-px flex-1 bg-ink/15" />
-              <p className="font-mono text-eyebrow uppercase text-ink-muted">
-                Selected Work / 2026
-              </p>
-              <div className="h-px flex-1 bg-ink/15" />
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-6">
+                <div className="h-px flex-1 bg-ink/15" />
+                <p className="font-mono text-eyebrow uppercase text-ink-muted">
+                  Selected Work / 2026
+                </p>
+                <div className="h-px flex-1 bg-ink/15" />
+              </div>
+              <ul className="flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2.5">
+                {projects.map((p) => (
+                  <li key={p.slug}>
+                    <a
+                      href={`#${p.slug}`}
+                      className="group inline-flex items-baseline gap-2"
+                    >
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-ink-muted">
+                        N° {p.index}
+                      </span>
+                      <span className="font-serif text-base text-ink underline-offset-4 group-hover:underline">
+                        {p.title}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="inline-block h-1.5 w-1.5 rounded-full"
+                        style={{ background: p.accent }}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </ScrollReveal>
         </div>
