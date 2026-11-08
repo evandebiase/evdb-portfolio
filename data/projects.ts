@@ -17,8 +17,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "casequestions",
+    slug: "offhours",
     index: "01",
+    title: "Off Hours Nashville",
+    tagline: "Every Nashville happy hour and food deal, live right now.",
+    description:
+      "A real-time directory of Nashville's happy hours and food deals. 207 venues sorted by day, time, type, and neighborhood, with a 'right now' view of what's live. Companion iPhone app for pregame planning on the go.",
+    year: "2026",
+    role: "Product, Engineering, iOS",
+    stack: ["Next.js", "TypeScript", "Swift", "Postgres"],
+    liveUrl: "https://www.offhoursnashville.com",
+    externalUrl: "https://www.offhoursnashville.com",
+    accent: "#8A3D5C"
+  },
+  {
+    slug: "casequestions",
+    index: "02",
     title: "CaseQuestions.ai",
     tagline: "An AI sparring partner for case and fit interviews.",
     description:
@@ -32,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     slug: "haulhub",
-    index: "02",
+    index: "03",
     title: "HaulHub.co",
     tagline: "Automated bidding site for vetted heavy-vehicle transport.",
     description:
@@ -46,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     slug: "wtga",
-    index: "03",
+    index: "04",
     title: "WTGA.live",
     tagline: "Find every game. Optimize streaming subscriptions.",
     description:
@@ -60,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nashville-biohacking",
-    index: "04",
+    index: "05",
     title: "Nashville Bio-hacking",
     tagline: "Brand and booking for a longevity & performance studio.",
     description:
@@ -74,7 +88,7 @@ export const projects: Project[] = [
   },
   {
     slug: "deepcount",
-    index: "05",
+    index: "06",
     title: "DeepCount.co",
     tagline: "Baseball analytics tools — the cuts coaches actually use.",
     description:
@@ -88,7 +102,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fieldpath",
-    index: "06",
+    index: "07",
     title: "FieldPath",
     tagline: "An operating system for medical device sales reps.",
     description:
