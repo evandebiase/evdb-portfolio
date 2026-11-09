@@ -3,33 +3,17 @@ import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { projects } from "@/data/projects";
 
-// Tech stack strip under the intro — one quiet, slowly-scrolling line.
-// Duplicated four times so the animated translateX(-50%) never shows blank
-// edge on wide viewports.
-const techStack = [
-  "Next.js",
-  "TypeScript",
-  "Postgres",
-  "Stripe",
-  "Clerk",
-  "Neon",
-  "Claude API",
-  "Tailwind",
-  "Sanity",
-  "Mapbox",
-  "Vercel",
-  "Edge"
-];
-
 export default function HomePage() {
+  const [hero, ...rest] = projects;
+
   return (
     <>
-      {/* Landing intro: identity block on the left, positioning line on the right */}
-      <section className="bg-cream pb-6 pt-20 md:pb-8 md:pt-24">
+      {/* Identity row + inline project index. One compact band above the fold
+          so the first iframe lands in the first viewport. */}
+      <section className="pt-20 md:pt-24">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
-            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
-              {/* Identity block */}
+            <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-10">
               <div className="flex items-center gap-4 md:col-span-4 lg:col-span-3">
                 <Image
                   src="/images/avatar.jpg"
@@ -37,13 +21,13 @@ export default function HomePage() {
                   width={112}
                   height={112}
                   priority
-                  className="h-14 w-14 shrink-0 rounded-full border border-ink/10 object-cover"
+                  className="h-12 w-12 shrink-0 rounded-full border border-ink/10 object-cover"
                 />
-                <div>
+                <div className="min-w-0">
                   <p className="font-serif text-lg leading-tight text-ink">
                     Evan DeBiase
                   </p>
-                  <div className="mt-2 flex items-center gap-3 text-ink-muted">
+                  <div className="mt-1.5 flex items-center gap-3 text-ink-muted">
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=evandebiase@gmail.com"
                       target="_blank"
@@ -101,80 +85,64 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Positioning paragraph */}
               <div className="md:col-span-8 lg:col-span-9">
-                <p className="max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">
-                  Product, brand, and engineering for founders who refuse to
-                  settle for the default. A few of the things I've built:
+                <p className="text-base leading-relaxed text-ink-soft md:text-lg">
+                  Product, brand, and engineering, end to end. Six live sites below.
                 </p>
+                <ul className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
+                  {projects.map((p) => (
+                    <li key={p.slug}>
+                      <a
+                        href={`#${p.slug}`}
+                        className="group inline-flex items-baseline gap-1.5"
+                      >
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-ink-muted">
+                          {p.index}
+                        </span>
+                        <span className="font-serif text-sm text-ink underline-offset-4 group-hover:underline md:text-base">
+                          {p.title}
+                        </span>
+                        <span
+                          aria-hidden
+                          className="inline-block h-1 w-1 rounded-full"
+                          style={{ background: p.accent }}
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Tech-stack marquee */}
-      <section
-        aria-hidden
-        className="overflow-hidden border-y border-ink/10 bg-cream py-3"
-      >
-        <div className="flex min-w-max animate-marquee items-center gap-10 whitespace-nowrap">
-          {[...techStack, ...techStack, ...techStack, ...techStack].map(
-            (item, i) => (
-              <span
-                key={i}
-                className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-muted md:text-[11px]"
-              >
-                {item}
-              </span>
-            )
-          )}
-        </div>
-      </section>
+      {/* Lead project: full-width live embed, straight into the proof. */}
+      <ProjectShowcase project={hero} variant="hero" />
 
-      {/* Selected Work header + project index — compact TOC that doubles as
-          proof-of-substance above the fold. Each chip jumps to its project. */}
-      <section className="bg-cream pb-4 pt-10 md:pb-6 md:pt-14">
+      {/* Projects 02-06 as a two-up grid of compact live embeds. */}
+      <section className="border-t border-ink/10 pb-20 pt-10 md:pb-28 md:pt-14">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ScrollReveal>
-            <div className="flex flex-col gap-5">
-              <div className="flex items-center gap-6">
-                <div className="h-px flex-1 bg-ink/15" />
-                <p className="font-mono text-eyebrow uppercase text-ink-muted">
-                  Selected Work / 2026
-                </p>
-                <div className="h-px flex-1 bg-ink/15" />
-              </div>
-              <ul className="flex flex-wrap items-baseline justify-center gap-x-5 gap-y-2.5">
-                {projects.map((p) => (
-                  <li key={p.slug}>
-                    <a
-                      href={`#${p.slug}`}
-                      className="group inline-flex items-baseline gap-2"
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-ink-muted">
-                        N° {p.index}
-                      </span>
-                      <span className="font-serif text-base text-ink underline-offset-4 group-hover:underline">
-                        {p.title}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="inline-block h-1.5 w-1.5 rounded-full"
-                        style={{ background: p.accent }}
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="mb-8 flex items-center gap-6 md:mb-10">
+              <p className="font-mono text-eyebrow uppercase text-ink-muted">
+                More live work
+              </p>
+              <div className="h-px flex-1 bg-ink/15" />
+              <p className="font-mono text-eyebrow uppercase text-ink-muted">
+                {rest.length} sites
+              </p>
             </div>
           </ScrollReveal>
+          <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 md:gap-y-16 [&>div:last-child:nth-child(odd)]:md:col-span-2">
+            {rest.map((project) => (
+              <div key={project.slug} className="min-w-0">
+                <ProjectShowcase project={project} variant="card" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      {projects.map((project) => (
-        <ProjectShowcase key={project.slug} project={project} />
-      ))}
     </>
   );
 }

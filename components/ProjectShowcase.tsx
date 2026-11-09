@@ -5,11 +5,19 @@ import { useRef, useState } from "react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
+type Variant = "hero" | "card";
+
 type Props = {
   project: Project;
+  variant?: Variant;
 };
 
-export function ProjectShowcase({ project }: Props) {
+export function ProjectShowcase({ project, variant = "hero" }: Props) {
+  if (variant === "card") return <ProjectCard project={project} />;
+  return <ProjectHero project={project} />;
+}
+
+function ProjectHero({ project }: { project: Project }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-120px" });
 
@@ -17,121 +25,174 @@ export function ProjectShowcase({ project }: Props) {
     <motion.section
       ref={ref}
       id={project.slug}
-      initial={{ opacity: 0, y: 60 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-      className="relative scroll-mt-32 border-t border-ink/10 py-20 md:py-32"
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      className="relative scroll-mt-28 pb-12 pt-6 md:pb-16 md:pt-8"
       style={{ ["--accent" as never]: project.accent ?? "#B4513E" }}
     >
-      {/* Project meta row */}
-      <div className="mx-auto mb-12 grid w-full max-w-[1600px] grid-cols-12 items-end gap-6 px-6 md:mb-16 md:px-12">
-        <div className="col-span-12 flex items-center gap-4 md:col-span-2">
+      <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12">
+        <div className="mb-5 flex flex-wrap items-baseline gap-x-5 gap-y-2 md:mb-7">
           <span className="font-mono text-eyebrow uppercase text-ink-muted">
             N° {project.index}
           </span>
           <span
             aria-hidden
-            className="h-2 w-2 rounded-full"
+            className="h-1.5 w-1.5 rounded-full"
             style={{ background: "var(--accent)" }}
           />
-        </div>
-
-        <div className="col-span-12 md:col-span-7">
-          <h3 className="font-serif text-display-md text-ink">
+          <h3 className="font-serif text-3xl leading-none text-ink md:text-4xl lg:text-5xl">
             {project.title}
           </h3>
-          <p className="mt-3 text-lg text-ink-soft md:text-xl">
+          <span className="text-base text-ink-soft md:text-lg">
             {project.tagline}
-          </p>
+          </span>
         </div>
 
-        <div className="col-span-12 grid grid-cols-2 gap-6 text-xs uppercase tracking-widest text-ink-muted md:col-span-3">
-          <div>
-            <p className="text-ink-muted/60">Year</p>
-            <p className="mt-1 text-ink">{project.year}</p>
-          </div>
-          <div>
-            <p className="text-ink-muted/60">Role</p>
-            <p className="mt-1 text-ink">{project.role}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Single full-width live preview pane */}
-      <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12">
         <ShowcasePane project={project} />
 
-        {/* Footer row: description + stack + CTA */}
-        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
-          <p className="text-base leading-relaxed text-ink-soft md:col-span-6 md:text-lg">
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-ink-soft md:mt-6">
+          <p className="max-w-3xl flex-1 text-base leading-relaxed md:text-lg">
             {project.description}
           </p>
-
-          <div className="md:col-span-3">
-            <p className="text-eyebrow uppercase text-ink-muted">Built with</p>
-            <ul className="mt-4 flex flex-wrap gap-1.5">
-              {project.stack.map((s) => (
-                <li
-                  key={s}
-                  className="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-ink"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex items-start md:col-span-3 md:justify-end">
-            {project.liveUrl ? (
-              <a
-                href={project.externalUrl ?? project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm text-cream transition-all hover:gap-5"
+          <ul className="flex flex-wrap gap-1.5">
+            {project.stack.map((s) => (
+              <li
+                key={s}
+                className="rounded-full border border-ink/15 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink"
               >
-                Visit live
-                <span aria-hidden>↗</span>
-              </a>
-            ) : (
-              <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3 text-xs uppercase tracking-widest text-ink-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-ink-muted/50" />
-                Coming soon
-              </span>
-            )}
-          </div>
+                {s}
+              </li>
+            ))}
+          </ul>
+          <VisitButton project={project} />
         </div>
       </div>
     </motion.section>
   );
 }
 
-function ShowcasePane({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: Project }) {
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <motion.section
+      ref={ref}
+      id={project.slug}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="group scroll-mt-28"
+      style={{ ["--accent" as never]: project.accent ?? "#B4513E" }}
+    >
+      <div className="mb-3 flex items-baseline gap-3">
+        <span className="font-mono text-eyebrow uppercase text-ink-muted">
+          N° {project.index}
+        </span>
+        <span
+          aria-hidden
+          className="h-1 w-1 rounded-full"
+          style={{ background: "var(--accent)" }}
+        />
+        <h3 className="font-serif text-xl leading-none text-ink md:text-2xl">
+          {project.title}
+        </h3>
+      </div>
+      <ShowcasePane project={project} compact />
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <p className="min-w-0 flex-1 text-sm leading-snug text-ink-soft">
+          {project.tagline}
+        </p>
+        <VisitButton project={project} compact />
+      </div>
+    </motion.section>
+  );
+}
+
+function VisitButton({
+  project,
+  compact = false
+}: {
+  project: Project;
+  compact?: boolean;
+}) {
+  if (!project.liveUrl) {
+    return (
+      <span
+        className={cn(
+          "inline-flex items-center gap-2 rounded-full border border-ink/15 uppercase tracking-widest text-ink-muted",
+          compact ? "px-3 py-1 text-[10px]" : "px-5 py-2.5 text-xs"
+        )}
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-ink-muted/50" />
+        Coming soon
+      </span>
+    );
+  }
+  return (
+    <a
+      href={project.externalUrl ?? project.liveUrl}
+      target="_blank"
+      rel="noreferrer"
+      className={cn(
+        "inline-flex items-center gap-2 rounded-full bg-ink font-medium text-cream transition-colors hover:bg-ink-soft",
+        compact ? "px-4 py-1.5 text-xs" : "px-6 py-2.5 text-sm"
+      )}
+    >
+      Open live
+      <span
+        aria-hidden
+        className="h-1.5 w-1.5 rounded-full"
+        style={{ background: project.accent ?? "#B4513E" }}
+      />
+    </a>
+  );
+}
+
+function ShowcasePane({
+  project,
+  compact = false
+}: {
+  project: Project;
+  compact?: boolean;
+}) {
   const urlLabel =
     project.liveUrl?.replace(/^https?:\/\//, "") ?? `${project.slug}.preview`;
 
   return (
     <div
       className={cn(
-        "group relative aspect-[3/4] overflow-hidden rounded-xl border border-ink/10 bg-cream-50 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)] sm:aspect-[4/3] md:aspect-[16/10] md:rounded-2xl md:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.4)] lg:aspect-[16/9]"
+        "group relative overflow-hidden border border-ink/10 bg-cream-50 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]",
+        compact
+          ? "aspect-[4/3] rounded-lg md:aspect-[16/10] md:rounded-xl"
+          : "aspect-[3/4] rounded-xl sm:aspect-[4/3] md:aspect-[16/9] md:rounded-2xl md:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.4)]"
       )}
     >
-      {/* Browser chrome */}
-      <div className="absolute inset-x-0 top-0 z-20 flex items-center gap-2 border-b border-ink/10 bg-cream/80 px-4 py-2.5 backdrop-blur md:px-5 md:py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
-        <span className="mx-auto truncate font-mono text-[10px] uppercase tracking-widest text-ink-muted md:text-[11px]">
+      <div
+        className={cn(
+          "absolute inset-x-0 top-0 z-20 flex items-center gap-2 border-b border-ink/10 bg-cream/80 backdrop-blur",
+          compact ? "px-3 py-1.5" : "px-4 py-2.5 md:px-5 md:py-3"
+        )}
+      >
+        <span className={cn("rounded-full bg-ink/15", compact ? "h-1.5 w-1.5" : "h-2.5 w-2.5")} />
+        <span className={cn("rounded-full bg-ink/15", compact ? "h-1.5 w-1.5" : "h-2.5 w-2.5")} />
+        <span className={cn("rounded-full bg-ink/15", compact ? "h-1.5 w-1.5" : "h-2.5 w-2.5")} />
+        <span
+          className={cn(
+            "mx-auto truncate font-mono uppercase tracking-widest text-ink-muted",
+            compact ? "text-[9px]" : "text-[10px] md:text-[11px]"
+          )}
+        >
           {urlLabel}
         </span>
-        <span className="w-12" aria-hidden />
+        <span className={compact ? "w-6" : "w-12"} aria-hidden />
       </div>
 
-      {/* Pane body */}
-      <div className="absolute inset-0 pt-9 md:pt-11">
+      <div className={cn("absolute inset-0", compact ? "pt-7" : "pt-9 md:pt-11")}>
         <LivePreview project={project} />
       </div>
 
-      {/* Hover hairlines */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
@@ -162,7 +223,7 @@ function LivePreview({ project }: { project: Project }) {
       )}
       {failed ? (
         <PreviewPlaceholder
-          label="Live embed blocked — click 'Visit live' to view"
+          label="Live embed blocked. Press Open live to view."
           accent={project.accent}
         />
       ) : (
@@ -170,18 +231,10 @@ function LivePreview({ project }: { project: Project }) {
           src={project.liveUrl}
           title={`${project.title} — live preview`}
           loading="lazy"
-          // Sandbox keeps user safe; allow-same-origin lets most sites actually render.
           sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-          // Default referrer policy — sending the normal Referer is required by
-          // Next.js Image optimization (/_next/image) on the embedded sites,
-          // otherwise it 403s their hero photos as "unauthorized hotlinks."
           referrerPolicy="strict-origin-when-cross-origin"
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
-          // Mobile: render the iframe at its native pane size — the embedded site shows
-          // its own mobile responsive design.
-          // Desktop (md+): render at 1.333× the pane size, then scale to 75% — a desktop
-          // view inside the chrome that stays interactive and crisp.
           className="absolute left-0 top-0 h-full w-full origin-top-left md:h-[133.33%] md:w-[133.33%] md:[transform:scale(0.75)]"
         />
       )}
@@ -213,7 +266,6 @@ function PreviewPlaceholder({
           {label}
         </span>
       </div>
-      {/* Decorative grid */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
